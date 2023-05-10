@@ -20,16 +20,20 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("serving request: %s", r.URL.Path)
 
 	host, err := os.Hostname()
-	
+
 	if err != nil {
 		http.Error(w, "Failed to get the hostname", http.StatusInternalServerError)
 		log.Printf("Error getting hostname: %v", err)
 		return
 	}
 
-	fmt.Fprintf(w, "Congratulations, You've successfully deployed a simple web server without TLS in a docker.\n")
+	fmt.Fprint(w, "\n")
+	fmt.Fprintf(w, "Congratulations, You've successfully deployed a simple web 🌏 server in a KinD ☸️  cluster.\n")
+	fmt.Fprint(w, "\n")
 	fmt.Fprintf(w, "Protocol: %s!\n", r.Proto)
+	fmt.Fprint(w, "\n")
 	fmt.Fprintf(w, "Hostname: %s\n", host)
+	fmt.Fprint(w, "\n")
 
 	if headerIP := r.Header.Get("X-Forwarded-For"); headerIP != "" {
 		fmt.Fprintf(w, "Client IP (X-Forwarded-For): %s\n", headerIP)
