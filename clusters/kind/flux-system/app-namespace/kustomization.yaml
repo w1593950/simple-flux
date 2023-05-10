@@ -1,0 +1,5 @@
+# NOTE: This file is managed by Rubix Cluster Operator, please refrain from changing the structure nor renaming.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - simple-flux-namespace.yaml
