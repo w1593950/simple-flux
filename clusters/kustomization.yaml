@@ -8,7 +8,6 @@ spec:
   path: ./kind/app-namespace
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: app-namespace
   prune: true
   validation: client
-
