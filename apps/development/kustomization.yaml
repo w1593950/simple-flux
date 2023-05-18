@@ -1,5 +1,15 @@
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-namespace: cncf-simple-flux-ns
-resources:
-  - cncf-simple-flux-ns.yaml
+metadata:
+  name: cncf-simple-flux-system
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./base/cncf-simple-flux-app
+  prune: true
+  wait: true
+  timeout: 5m0s
