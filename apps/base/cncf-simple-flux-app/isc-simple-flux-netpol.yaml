@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: isc-simple-flux-allow-all-ingress-egress
+  namespace: isc-simple-flux
+  labels:
+    app.kubernetes.io/environment: development
+    app.kubernetes.io/name: isc-simple-flux
+  annotations:
+    app.cloud.is.com/sample-annotation: "ramesh-added-this-annotation-for-flux-testing"
+spec:
+  egress:
+    - {}
+  ingress:
+    - {}
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
