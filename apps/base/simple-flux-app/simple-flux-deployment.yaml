@@ -23,7 +23,7 @@ spec:
         # basic container details
         - name: simple-flux-container
           # never use reusable tags like latest or stable
-          #image: docker.io/kylix3511/simple-go-app:2.5
+          #image: docker.io/kylix3511/simple-go-app:2.0
           image: ghcr.io/w1593950/simple-go-app:3.0
           # hardcode the listening port if Dockerfile isn't set with EXPOSE
           ports:
